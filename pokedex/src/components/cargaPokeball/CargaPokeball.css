@@ -59,9 +59,10 @@
 /*Puntos suspensivos*/
 
 #cargando-pokeball{
-  text-align: center;
-  margin-top: 30px;
-  font-size: 1.4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #puntos::after {
@@ -75,4 +76,20 @@
   50%  { content: '..'; }
   75%  { content: '...'; }
   100% { content: ''; }
+}
+
+#cargando{
+  text-align: center;
+  margin-top: 30px;
+  font-size: 2em;
+}
+
+#cargando-info{
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+#primeravez-aviso{
+  margin-top: 5px;
+  font-size: 0.8em;
 }
