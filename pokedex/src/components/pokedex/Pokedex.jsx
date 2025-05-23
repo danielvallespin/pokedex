@@ -2,7 +2,6 @@ import './Pokedex.css';
 import { useState, useEffect } from 'react';
 import Pokemon from '../../clases/Pokemon';
 import CardPokemon from '../cardPokemon/CardPokemon';
-import Cabecera from '../cabecera/Cabecera';
 
 function Pokedex(props){
 
@@ -48,21 +47,34 @@ function Pokedex(props){
         <>
             {!props.cargando && (
                 <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-12">
-                            <Cabecera />
-                        </div>
-                    </div>
                     <div className="row" id='pokedex-container'>
-                        <div className="col-12" id="pokedex-overlay">
-                            {pokeLista.map((pokemon, index) => (
-                                <CardPokemon
-                                key={index}
-                                id={pokemon.getId()}
-                                nombre={pokemon.nombre}
-                                img={pokemon.imgPrincipal}
-                                />
-                            ))}
+                        <div id="pokedex-header" className="col-12">
+                            <div id='iconos-pokedex'>
+                                <div id="circulo"></div>
+                                <div id="luces">
+                                    <span className='luz' id="azul"></span>
+                                    <span className='luz' id="amarillo"></span>
+                                    <span className='luz' id="verde"></span>
+                                </div>
+                            </div>
+                            <div id='titulo-container'>
+                                <h1>Pokédex de Dani</h1>
+                            </div>
+                        </div>
+
+                        <div id='pokedex-overlay'>
+                            <div id='marco'>
+                                <div className="col-12" id="pokedex-pantalla">
+                                    {pokeLista.map((pokemon, index) => (
+                                        <CardPokemon
+                                        key={index}
+                                        id={pokemon.getId()}
+                                        nombre={pokemon.nombre}
+                                        img={pokemon.imgPrincipal}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
