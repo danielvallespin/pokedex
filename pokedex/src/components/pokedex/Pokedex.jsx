@@ -1,8 +1,10 @@
 import './Pokedex.css';
 import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Pokemon from '../../clases/Pokemon';
 import CardPokemon from '../cardPokemon/CardPokemon';
+import Cabecera from '../cabecera/Cabecera';
 
 function Pokedex(props) {
 
@@ -47,36 +49,12 @@ function Pokedex(props) {
     return (
         <>
             {!props.cargando && (
-                <div className="container-fluid">
-                    <div id='pokedex-container'>
-                        <div className='row' id="pokedex-header">
-                            <div id='iconos-pokedex' className="col-12 col-md-8">
-                                <div id="circulo"></div>
-                                <div id="luces">
-                                    <span className='luz' id="azul"></span>
-                                    <span className='luz' id="amarillo"></span>
-                                    <span className='luz' id="verde"></span>
-                                </div>
-                            </div>
-                            <div id='titulo-container' className='col-12 col-md-4'>
-                                <h1>Pokédex de Dani</h1>
-                            </div>
-                        </div>
+                <div className="container-fluid" id='pantalla'>
+                    <div className='row' id='cabecera-container'>
+                        <Cabecera/>
+                    </div>
+                    <div className='row'>
 
-                        <div id='pokedex-overlay'>
-                            <div id='marco'>
-                                <div className='row gap-4 pt-3 justify-content-center px-4' id="pokedex-pantalla">
-                                    {pokeLista.map((pokemon, index) => (
-                                        <CardPokemon
-                                            key={index}
-                                            id={pokemon.getId()}
-                                            nombre={pokemon.nombre}
-                                            img={pokemon.imgPrincipal}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             )}
